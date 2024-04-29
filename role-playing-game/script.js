@@ -160,7 +160,6 @@ function buyWeapon() {
         button2.onclick = sellWeapon;
     }
 }
-
 function sellWeapon() {
     if (inventory.length > 1) {
         gold += 15;
@@ -265,6 +264,7 @@ function restart() {
     xpText.innerText = xp;
     goTown();
 }
+
 
 function easterEgg() {
     update(locations[7]);
