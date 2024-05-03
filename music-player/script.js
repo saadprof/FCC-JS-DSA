@@ -188,3 +188,16 @@ const setPlayerDisplay = () => {
     playingSong.textContent = currentTitle ? currentTitle : "";
     songArtist.textContent = currentArtist ? currentArtist : "";
 };
+
+const highlightCurrentSong = () => {
+    const playlistSongElements = document.querySelectorAll(".playlist-song");
+    const songToHighlight = document.getElementById(
+        `song-${userData?.currentSong?.id}`
+    );
+
+    playlistSongElements.forEach((songEl) => {
+        songEl.removeAttribute("aria-current");
+    });
+
+    if (songToHighlight) songToHighlight.setAttribute("aria-current", "true");
+};
