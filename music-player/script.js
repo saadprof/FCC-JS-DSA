@@ -232,3 +232,14 @@ const setPlayButtonAccessibleText = () => {
         song?.title ? `Play ${song.title}` : "Play"
     );
 };
+
+const getCurrentSongIndex = () =>
+    userData?.songs.indexOf(userData?.currentSong);
+
+playButton.addEventListener("click", () => {
+    if (userData?.currentSong === null) {
+        playSong(userData?.songs[0].id);
+    } else {
+        playSong(userData?.currentSong.id);
+    }
+});
