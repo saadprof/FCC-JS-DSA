@@ -1,0 +1,71 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(6, 6, 39);
+    color: #ffffff;
+}
+
+#main{
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    margin: auto;
+}
+
+#checker{
+    margin: 20px 0px;
+    padding: 20px 50px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: rgb(9, 9, 34);
+    width: 80%;
+}
+#checker label{
+    font-size: 20px;
+    font-weight: 500;
+}
+#checker #checker-block{
+    margin-top: 10px;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+#checker #text-input{
+    width: 70%;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid green;
+    padding: 10px 0;
+    font-size: 20px;
+}
+#checker #check-btn{
+    width: 30%;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid green;
+    background-color: green;
+    color: #ffffff;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+
+#tip{
+    background-color: #ffffff;
+    color: #000000cb;
+    border-radius: 10px;
+}
+#tip p{
+    padding: 40px;
+    font-size: 20px;
+    font-weight: 500;
+}
