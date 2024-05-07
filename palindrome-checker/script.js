@@ -10,7 +10,6 @@ const checkPalindrome = (str) => {
     return regex === reversedStr;
 };
 
-
 const triggerEvent = () =>{
     const isPalindrome = checkPalindrome(textInput.value.trim());
     
@@ -23,7 +22,6 @@ const triggerEvent = () =>{
             resultP.textContent = `${textInput.value} is not a Palindrome`;
         }
     }
-
     textInput.value = '';
 }
 
@@ -31,9 +29,7 @@ const manipulateDOM = () =>{
     triggerEvent();
 }
 
-
 checkBtn.addEventListener("click", manipulateDOM);
-
 textInput.addEventListener("keyup", (e) =>{
     e.preventDefault();
     if(e.key === 'Enter') triggerEvent();
