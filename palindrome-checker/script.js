@@ -23,3 +23,5 @@ const manipulateDOM = () =>{
         }
     }
 }
+
+checkBtn.addEventListener("click", manipulateDOM);
