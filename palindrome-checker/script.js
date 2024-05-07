@@ -11,6 +11,15 @@ const checkPalindrome = (str) => {
 };
 
 const manipulateDOM = () =>{
-    const isPalindrome = checkPalindrome(textInput.ariaValueMax.trim());
-    console.log(isPalindrome);
+    const isPalindrome = checkPalindrome(textInput.value.trim());
+    
+    if(textInput.value === ""){
+        alert("Please input a value");
+    } else{
+        if(isPalindrome){
+            resultP.textContent = `${textInput.value} is a Palindrome`;
+        } else{
+            resultP.textContent = `${textInput.value} is not a Palindrome`;
+        }
+    }
 }
