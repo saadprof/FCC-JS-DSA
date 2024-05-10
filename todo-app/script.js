@@ -77,7 +77,6 @@ const deleteTask = (buttonEl) => {
     localStorage.setItem("data", JSON.stringify(taskData));
 };
 
-
 // This function find the index of current task and get currentTask data from taskData
 // the show all the currenTask data in the input fields so that user can edit.
 // replace button text "Add Task" to "Update Task"
@@ -95,4 +94,13 @@ const editTask = (buttonEl) => {
     addOrUpdateTaskBtn.innerText = "Update Task";
 
     taskForm.classList.toggle("hidden");
+};
+
+// This function resets every current data field so that new task can be added.
+const reset = () => {
+    titleInput.value = "";
+    dateInput.value = "";
+    descriptionInput.value = "";
+    taskForm.classList.toggle("hidden");
+    currentTask = {};
 };
