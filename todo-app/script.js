@@ -132,7 +132,6 @@ closeTaskFormBtn.addEventListener("click", () => {
     }
 });
 
-
 // event listener on cancel button of modal, close the modal on click.
 cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 
@@ -140,4 +139,11 @@ cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
 discardBtn.addEventListener("click", () => {
     confirmCloseDialog.close();
     reset();
+});
+
+// event listener on taskForm triggers on submit and call addOrUpdateTask()
+taskForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    addOrUpdateTask();
 });
