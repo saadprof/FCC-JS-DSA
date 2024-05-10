@@ -141,6 +141,7 @@ discardBtn.addEventListener("click", () => {
     reset();
 });
 
+
 // event listener on taskForm triggers on submit and call addOrUpdateTask()
 taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
