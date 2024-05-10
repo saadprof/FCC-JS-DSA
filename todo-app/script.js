@@ -47,7 +47,6 @@ const addOrUpdateTask = () => {
     reset();
 };
 
-
 // This function creates new element in the DOM.
 const updateTaskContainer = () => {
     tasksContainer.innerHTML = "";
@@ -63,4 +62,17 @@ const updateTaskContainer = () => {
           </div>
         `;
     });
+};
+
+// This function delete existing task. dataArrIndex find tasks index, 
+// removes using arr.splice(startingIndex, Counts, replaceItem) method to remove task
+// Then renew the localStorage
+const deleteTask = (buttonEl) => {
+    const dataArrIndex = taskData.findIndex(
+        (item) => item.id === buttonEl.parentElement.id
+    );
+
+    buttonEl.parentElement.remove();
+    taskData.splice(dataArrIndex, 1);
+    localStorage.setItem("data", JSON.stringify(taskData));
 };
