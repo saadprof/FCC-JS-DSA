@@ -64,7 +64,7 @@ const updateTaskContainer = () => {
     });
 };
 
-// This function delete existing task. dataArrIndex find tasks index, 
+// This function delete existing task. dataArrIndex find tasks index,
 // removes using arr.splice(startingIndex, Counts, replaceItem) method to remove task
 // Then renew the localStorage
 const deleteTask = (buttonEl) => {
@@ -75,4 +75,24 @@ const deleteTask = (buttonEl) => {
     buttonEl.parentElement.remove();
     taskData.splice(dataArrIndex, 1);
     localStorage.setItem("data", JSON.stringify(taskData));
+};
+
+
+// This function find the index of current task and get currentTask data from taskData
+// the show all the currenTask data in the input fields so that user can edit.
+// replace button text "Add Task" to "Update Task"
+const editTask = (buttonEl) => {
+    const dataArrIndex = taskData.findIndex(
+        (item) => item.id === buttonEl.parentElement.id
+    );
+
+    currentTask = taskData[dataArrIndex];
+
+    titleInput.value = currentTask.title;
+    dateInput.value = currentTask.date;
+    descriptionInput.value = currentTask.description;
+
+    addOrUpdateTaskBtn.innerText = "Update Task";
+
+    taskForm.classList.toggle("hidden");
 };
