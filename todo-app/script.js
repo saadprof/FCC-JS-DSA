@@ -131,3 +131,13 @@ closeTaskFormBtn.addEventListener("click", () => {
         reset();
     }
 });
+
+
+// event listener on cancel button of modal, close the modal on click.
+cancelBtn.addEventListener("click", () => confirmCloseDialog.close());
+
+// event listener on discard button of modal, discards all the values of input fields and close tha modal.
+discardBtn.addEventListener("click", () => {
+    confirmCloseDialog.close();
+    reset();
+});
