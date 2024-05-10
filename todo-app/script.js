@@ -15,9 +15,22 @@ const descriptionInput = document.getElementById("description-input");
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
 
-
 // This function is used to add new task, or update existing task.
 const addOrUpdateTask = () => {
     addOrUpdateTaskBtn.innerText = "Add Task";
-    
+
+    // arr.findIndex(callback Func()) is used to check if a item is in a array.
+    const dataArrIndex = taskData.findIndex(
+        (item) => item.id === currentTask.id
+    );
+    // taskObj is to create new object. Using Date.now() to create a unique id is new and interesting to me.
+    const taskObj = {
+        id: `${titleInput.value
+            .toLowerCase()
+            .split(" ")
+            .join("-")}-${Date.now()}`,
+        title: titleInput.value,
+        date: dateInput.value,
+        description: descriptionInput.value,
+    };
 };
