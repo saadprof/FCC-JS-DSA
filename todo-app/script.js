@@ -14,3 +14,10 @@ const descriptionInput = document.getElementById("description-input");
 // taskData retrieve data from local storage or be an empty array.
 const taskData = JSON.parse(localStorage.getItem("data")) || [];
 let currentTask = {};
+
+
+// This function is used to add new task, or update existing task.
+const addOrUpdateTask = () => {
+    addOrUpdateTaskBtn.innerText = "Add Task";
+    
+};
