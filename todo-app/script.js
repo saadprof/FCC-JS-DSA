@@ -113,3 +113,21 @@ if (taskData.length) {
 openTaskFormBtn.addEventListener("click", () =>
     taskForm.classList.toggle("hidden")
 );
+
+// event listener on "Close" sign to close the task form.
+// But before closing it checks if any of input fields contain value.
+// If input field contains value it shows a modal, else reset the input fields.
+closeTaskFormBtn.addEventListener("click", () => {
+    const formInputsContainValues =
+        titleInput.value || dateInput.value || descriptionInput.value;
+    const formInputValuesUpdated =
+        titleInput.value !== currentTask.title ||
+        dateInput.value !== currentTask.date ||
+        descriptionInput.value !== currentTask.description;
+
+    if (formInputsContainValues && formInputValuesUpdated) {
+        confirmCloseDialog.showModal();
+    } else {
+        reset();
+    }
+});
