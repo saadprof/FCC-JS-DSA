@@ -33,4 +33,16 @@ const addOrUpdateTask = () => {
         date: dateInput.value,
         description: descriptionInput.value,
     };
+
+    // This condition checks if a item is in array. if not, then add to the array.
+    if (dataArrIndex === -1) {
+        taskData.unshift(taskObj);
+    } else {
+        taskData[dataArrIndex] = taskObj;
+    }
+
+    // store the stringified taskData using JSON.stringify under the "data" key in storage;
+    localStorage.setItem("data", JSON.stringify(taskData));
+    updateTaskContainer();
+    reset();
 };
