@@ -108,3 +108,8 @@ const reset = () => {
 if (taskData.length) {
     updateTaskContainer();
 }
+
+// event listener on "Add Task" button. onclick it shows taskForm
+openTaskFormBtn.addEventListener("click", () =>
+    taskForm.classList.toggle("hidden")
+);
