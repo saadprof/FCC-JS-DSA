@@ -12,6 +12,8 @@ const sortInputArray = (event) => {
     const sortedValues = inputValues.sort((a, b) => {
         return a - b;
     });
+
+    updateUI(sortedValues);
 };
 
 const updateUI = (array = []) => {
@@ -20,3 +22,6 @@ const updateUI = (array = []) => {
         outputValueNode.innerText = num;
     });
 };
+
+
+sortButton.addEventListener("click", sortInputArray);
