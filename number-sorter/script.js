@@ -13,3 +13,10 @@ const sortInputArray = (event) => {
         return a - b;
     });
 };
+
+const updateUI = (array = []) => {
+    array.forEach((num, i) => {
+        const outputValueNode = document.getElementById(`output-value-${i}`);
+        outputValueNode.innerText = num;
+    });
+};
