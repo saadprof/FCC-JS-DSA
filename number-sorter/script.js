@@ -14,7 +14,10 @@ const sortInputArray = (event) => {
     // });
 
     // bubble sort is another way to sort.
-    const sortedValues = bubbleSort(inputValues);
+    // const sortedValues = bubbleSort(inputValues);
+
+
+    const sortedValues = selectionSort(inputValues);
 
     updateUI(sortedValues);
 };
@@ -41,5 +44,25 @@ const bubbleSort = (array) => {
     return array;
 };
 
+
+// Selection sort is a efficient sorting method that sort the smalles/largest element
+// from the unsorted portion of the list to the sorted portion. 
+const selectionSort = (array) => {
+    for (let i = 0; i < array.length; i++) {
+        let minIndex = i;
+
+        for (let j = i + 1; j < array.length; j++) {
+            if (array[j] < array[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        const temp = array[i];
+        array[i] = array[minIndex];
+        array[minIndex] = temp;
+    }
+
+    return array;
+};
 
 sortButton.addEventListener("click", sortInputArray);
