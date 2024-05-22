@@ -16,7 +16,12 @@ const sortInputArray = (event) => {
     // bubble sort is another way to sort.
     // const sortedValues = bubbleSort(inputValues);
 
-    const sortedValues = selectionSort(inputValues);
+    // selectionSort algorithm is efficient
+    // const sortedValues = selectionSort(inputValues);
+    
+    // insertionSort is interesting an easy one.
+    const sortedValues = insertionSort(inputValues);
+    
 
     updateUI(sortedValues);
 };
