@@ -18,10 +18,9 @@ const sortInputArray = (event) => {
 
     // selectionSort algorithm is efficient
     // const sortedValues = selectionSort(inputValues);
-    
+
     // insertionSort is interesting an easy one.
     const sortedValues = insertionSort(inputValues);
-    
 
     updateUI(sortedValues);
 };
